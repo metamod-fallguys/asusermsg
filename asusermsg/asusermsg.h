@@ -101,26 +101,53 @@ public:
 	}
 	int GetArgType(int index) const
 	{
+		if (!IsValidArgIndex(index))
+			return 0;
+
 		return m_msgArgs[index].m_iArgType;
 	}
 	int GetArgInteger(int index) const
 	{
+		if (!IsValidArgIndex(index))
+			return 0;
+
 		return m_msgArgs[index].v.m_iData;
 	}
 	float GetArgFloat(int index) const
 	{
+		if (!IsValidArgIndex(index))
+			return 0.0f;
+
 		return m_msgArgs[index].v.m_flData;
 	}
 	const char* GetArgString(int index) const
 	{
+		if (!IsValidArgIndex(index))
+			return "";
+
 		return m_msgArgs[index].m_string.c_str();
 	}
 
 	void GetArgString(int index, CString *str) const
 	{
+		if (!str)
+			return;
+
+		if (!IsValidArgIndex(index))
+		{
+			str->assign("", 0);
+			return;
+		}
+
 		str->assign(m_msgArgs[index].m_string.c_str(), m_msgArgs[index].m_string.length());
 	}
+
 private:
+	bool IsValidArgIndex(int index) const
+	{
+		return index >= 0 && index < m_msgArgCount && index < MAX_USERMSG_ARG_COUNT;
+	}
+
 	bool m_msgHookGlobalEnabled;
 	bool m_Hooked;
 	bool m_Blocked;

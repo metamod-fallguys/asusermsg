@@ -74,7 +74,7 @@ plugin_info_t Plugin_info = {
 	"https://github.com/hzqst/metamod-fallguys",	// url
 	"ASUSERMSG",	// logtag, all caps please
 	PT_ANYTIME,	// (when) loadable
-	PT_STARTUP,	// (when) unloadable
+	PT_NEVER,	// (when) unloadable
 };
 
 // Global vars from metamod:
