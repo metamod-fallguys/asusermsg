@@ -120,6 +120,7 @@ public:
 	{
 		str->assign(m_msgArgs[index].m_string.c_str(), m_msgArgs[index].m_string.length());
 	}
+
 private:
 	bool m_msgHookGlobalEnabled;
 	bool m_Hooked;

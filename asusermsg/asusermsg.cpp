@@ -63,7 +63,7 @@ void CUserMsgHookManager::SendBufferedMessage()
 		}
 		case UserMsgArg_Long:
 		{
-			g_engfuncs.pfnWriteShort(m_msgArgs[i].v.m_iData);
+			g_engfuncs.pfnWriteLong(m_msgArgs[i].v.m_iData);
 			break;
 		}
 		case UserMsgArg_Angle:
@@ -110,7 +110,7 @@ void CUserMsgHookManager::WriteChar(int iValue)
 		ClearMessage();
 		return;
 	}
-	m_msgArgs[m_msgArgCount].m_iArgType = UserMsgArg_Byte;
+	m_msgArgs[m_msgArgCount].m_iArgType = UserMsgArg_Char;
 	m_msgArgs[m_msgArgCount].v.m_iData = iValue;
 	m_msgArgCount++;
 }
