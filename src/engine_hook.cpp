@@ -10,4 +10,4 @@
 #include "enginedef.h"
 #include "serverdef.h"
 
-const Vector g_vecZero = { 0, 0, 0 };
+const Vector g_vecZero = {0, 0, 0};
