@@ -29,5 +29,6 @@ if(WIN32)
     target_sources(asusermsg PRIVATE src/dllmain.cpp)
     target_compile_definitions(asusermsg PRIVATE ASUSERMSG_EXPORTS)
 endif()
+mmfg_assign_source_groups(asusermsg)
 
 include(cmake/FormatValidation.cmake)
